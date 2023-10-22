@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
+find_package(Catch2 3 REQUIRED)
 
 # Add all of the source files for your tests
 set(SOURCES
@@ -22,6 +23,9 @@ target_compile_options(${TEST_NAME} PRIVATE "-pedantic")
 
 
 enable_testing() # alternate of include(CTest)
+include(Catch)
+# Discover the tests described in the source files.
+catch_discover_tests(${TEST_NAME})
 
 # Add additional tests, which can use external scripts, alternate arguments, etc
 add_test(NAME ExtraTest COMMAND ${TEST_NAME})
@@ -36,21 +40,10 @@ add_test(NAME ExtraTest COMMAND ${TEST_NAME})
 
 
 
-# Download the Catch2 distribution
-Include(FetchContent)
-set(FETCHCONTENT_BASE_DIR "${CMAKE_BINARY_DIR}/build/_deps" CACHE STRING "Base directory for FetchContent downloads" FORCE)
-FetchContent_Declare(
-        Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG        v3.0.1 # or a later release
-)
-FetchContent_MakeAvailable(Catch2)
 
 
-include(Catch)
 
-# Discover the tests described in the source files.
-catch_discover_tests(${TEST_NAME})
+
 
 
 

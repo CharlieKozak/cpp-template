@@ -1,2 +1,0 @@
-#!/bin/sh
-ag -l --ignore-dir artifacts | entr ./tools/build-debug

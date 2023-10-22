@@ -1,6 +1,0 @@
-#!/bin/sh
-set -e
-./tools/build-release
-cd artifacts/Release/bench
-./bench "$@"
-cd ../../..
