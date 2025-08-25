@@ -1,4 +1,4 @@
-#include "treasure.h"
+#include <treasure/treasure.h>
 #include <iomanip>
 #include <iostream>
 #include <cmath>

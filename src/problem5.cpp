@@ -1,5 +1,5 @@
 
-#include "treasure.h"
+#include <treasure/treasure.h>
 #include <cmath>
 #include <iomanip>
 #include <iostream>

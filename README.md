@@ -83,6 +83,14 @@ Click one of them and you will get a menu at the top for running or debugging a
 program. Click one and that name will appear in brackets at the bottom. Click
 the button to run the target, or the target name in brackets to change it. 
 
+# Using CMake Presets (Codespaces/VS Code)
+
+If you prefer Presets, this repo includes a minimal `CMakePresets.json`:
+
+- Configure: `cmake --preset default`
+- Build: `cmake --build --preset default`
+- Test: `ctest --preset default`
+
 # Project Setup 
 
 ( Do this once ) 
