@@ -1,30 +1,52 @@
+# OS and Editor files
 .DS_Store
-.cmake
+*.swp
+*.swo
+tags
+
+# Build directories and artifacts
+build/
+bin/
+artifacts/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+DartConfiguration.tcl
+Testing/
+*.cmake
+
+_deps
+
+# Ninja build files
 .ninja_deps
 .ninja_log
 build.ninja
 
+# Compiled binaries and libraries
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
 
-Testing
-artifacts/
-*.swp
-*.swo
-tags
-compile_commands.json
+# Object files
+*.o
+*.obj
 
-CMakeCache.txt
-CMakeFiles
-Makefile
-cmake_install.cmake
+# VS Code / IDE files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.idea/
+*.code-workspace
 
-build/*
-! build/.keep
-bin/*
-! bin/.keep
-
-
-test/CTestTestfile.cmake
-test/*.cmake
-test/Testing
-
-DartConfiguration.tcl
+# Temporary files
+*.tmp
+*.temp
+*~

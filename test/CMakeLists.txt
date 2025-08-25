@@ -11,7 +11,7 @@ set(SOURCES
   fibonacci_tests.cpp
 )
 
-set(TEST_NAME ${PROJECT_NAME}_test)
+set(TEST_NAME tests)
 add_executable(${TEST_NAME} ${SOURCES})
 
 target_link_libraries(${TEST_NAME} PRIVATE fibonacci Catch2::Catch2WithMain)
@@ -34,9 +34,6 @@ catch_discover_tests(${TEST_NAME})
 #        DEPENDS ${PROJECT_NAME}
 #        COMMENT "Build and test"
 #        )
-
-
-
 
 
 
