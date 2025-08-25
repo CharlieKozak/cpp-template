@@ -16,7 +16,10 @@ cmake_install.cmake
 CTestTestfile.cmake
 DartConfiguration.tcl
 Testing/
-*.cmake
+Makefile
+compile_commands.json
+*_include.cmake
+*_tests.cmake
 
 _deps
 
