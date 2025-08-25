@@ -2,18 +2,11 @@
 set -euo pipefail
 
 BASHRC="${HOME}/.bashrc"
-MARK_START="# >>> prompt-newline >>>"
-MARK_END="# <<< prompt-newline <<<"
+CUSTOM_BASHRC="${CODESPACE_VSCODE_FOLDER}/.devcontainer/.bashrc"
 
-if [ -f "$BASHRC" ] && ! grep -qF "$MARK_START" "$BASHRC"; then
-  {
-    echo "$MARK_START"
-    echo "# Add newline + prompt symbol on a new line for interactive bash shells"
-    echo "if [[ $- == *i* ]]; then"
-    echo "  PS1=\"${PS1}\\n\\$ \""
-    echo "fi"
-    echo "$MARK_END"
-  } >> "$BASHRC"
+# Add source line for our custom .bashrc if not already present
+if [ -f "$BASHRC" ] && ! grep -qF "source ${CUSTOM_BASHRC}" "$BASHRC"; then
+  echo "source ${CUSTOM_BASHRC}" >> "$BASHRC"
 fi
 
 echo "Post-create: prompt newline setup complete."
