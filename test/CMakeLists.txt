@@ -8,13 +8,13 @@ FetchContent_MakeAvailable(Catch2)
 
 # Add all of the source files for your tests
 set(SOURCES
-  treasure_tests.cpp
+  fibonacci_tests.cpp
 )
 
 set(TEST_NAME ${PROJECT_NAME}_test)
 add_executable(${TEST_NAME} ${SOURCES})
 
-target_link_libraries(${TEST_NAME} PRIVATE treasure Catch2::Catch2WithMain)
+target_link_libraries(${TEST_NAME} PRIVATE fibonacci Catch2::Catch2WithMain)
 target_compile_definitions(${TEST_NAME} PRIVATE )
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

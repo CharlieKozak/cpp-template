@@ -74,8 +74,9 @@ top of the screen ) options to check what will get built. The important targets
 are: 
 
 * all. Build everything
-* p5 The executable for problem 5. The code for this is in `src/problem5.cpp'
-* hw5_test. A test program. The code for this is in `test/treasure_tests.cpp'
+* fibocli. A CLI that prints the first N Fibonacci numbers from `src/fibocli.cpp`.
+* helloworld. A simple Hello World from `src/helloworld.cpp`.
+* hw5_test. Test program for the Fibonacci library from `test/fibonacci_tests.cpp`.
 
 
 Also at the bottom of the screen are the run buttons, A bug, and a play button.

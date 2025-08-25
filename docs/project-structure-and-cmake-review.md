@@ -46,7 +46,7 @@ It also highlights specific issues to fix and provides concrete, modern CMake an
 │     └─ treasure.cpp
 ├─ src/
 │  ├─ CMakeLists.txt
-│  ├─ main.cpp      # or multiple executables (p2, p5, etc.)
+│  ├─ main.cpp      # or multiple executables (e.g., helloworld, fibocli)
 │  └─ ...           # additional translation units
 ├─ test/
 │  ├─ CMakeLists.txt
@@ -121,19 +121,19 @@ Executables in `src/CMakeLists.txt`:
 - If you want handy run targets, use generator expressions for the binary path.
 
 ```
-add_executable(p5
-  problem5.cpp
+add_executable(fibocli
+  fibocli.cpp
   # more .cpp files as needed
 )
 
 # Consumers just link the library and get its includes transitively
-target_link_libraries(p5 PRIVATE treasure)
+target_link_libraries(fibocli PRIVATE treasure)
 
 # Optional "run" target
-add_custom_target(run_p5
-  COMMAND $<TARGET_FILE:p5>
-  DEPENDS p5
-  COMMENT "Running p5"
+add_custom_target(run_fibocli
+  COMMAND $<TARGET_FILE:fibocli>
+  DEPENDS fibocli
+  COMMENT "Running fibocli"
 )
 ```
 

@@ -6,9 +6,9 @@
 ## Add a simple executable
 ###
 
-# Set the name and the source files for the executable
-set(EXEC_NAME p2)
-add_executable(${EXEC_NAME} problem2.cpp)
+## Hello World executable
+set(EXEC_NAME helloworld)
+add_executable(${EXEC_NAME} helloworld.cpp)
 
 # These compile options make the compiler add extra warnings and treat warnings as errors
 target_compile_options(${EXEC_NAME} PRIVATE "-Wall")
@@ -24,13 +24,13 @@ target_compile_options(${EXEC_NAME} PRIVATE "-pedantic")
 ## has a lot of compile options
 ##
 
-# Set the name and the source files for the executable
-set(EXEC_NAME p5)
-add_executable(${EXEC_NAME} problem5.cpp)
+## Fibonacci CLI executable
+set(EXEC_NAME fibocli)
+add_executable(${EXEC_NAME} fibocli.cpp)
 
 # Link the executable with the library, so all of the sources from $SOURCES
 # are linked to the executable file with main in it()
-target_link_libraries(${EXEC_NAME} PRIVATE treasure)
+target_link_libraries(${EXEC_NAME} PRIVATE fibonacci)
 
 # Add the include directory, so that the sources from $SOURCES can include without specifying the path
 # No need to add include dirs: inherited transitively from 'treasure' target
@@ -58,9 +58,9 @@ target_compile_options(${EXEC_NAME} PRIVATE "-Wno-unused-parameter") # The instr
 
 # Add the target 'make run_${EXEC_NAME}' to build and run the tests
 add_custom_target(run_${EXEC_NAME}
-        COMMAND $<TARGET_FILE:${EXEC_NAME}>
+        COMMAND $<TARGET_FILE:${EXEC_NAME}> 10
         DEPENDS ${EXEC_NAME}
-        COMMENT "Running ${EXEC_NAME}"
+        COMMENT "Running ${EXEC_NAME} with N=10"
 )
 
 # Set  compiler options
