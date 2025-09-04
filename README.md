@@ -6,7 +6,6 @@ repository for your project, making a copy of it in your own Github account.
 After instantiatinœg the template, you should clone your new repository to your
 local machine and start working on your project, or use an online code editor like Github Codespaces that can work with the git repository directly. 
 
-
 # IDE Setup
 
 There are a few things to do to get your IDE working and start your project 
