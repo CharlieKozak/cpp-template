@@ -18,6 +18,18 @@ target_compile_options(${EXEC_NAME} PRIVATE "-pedantic")
 
 ## End Executable
 
+## Hello Bob executable
+set(EXEC_NAME2 hellobob)
+add_executable(${EXEC_NAME2} hellobob.cpp)
+
+# These compile options make the compiler add extra warnings and treat warnings as errors
+target_compile_options(${EXEC_NAME2} PRIVATE "-Wall")
+target_compile_options(${EXEC_NAME2} PRIVATE "-Wextra")
+target_compile_options(${EXEC_NAME2} PRIVATE "-Werror")
+target_compile_options(${EXEC_NAME2} PRIVATE "-pedantic")
+
+## End Executable
+
 ##
 ## Add an Executable
 ## This is an example of a complex executable that links to libraries and
