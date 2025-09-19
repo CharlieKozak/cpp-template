@@ -7,74 +7,11 @@
 ###
 
 ## Hello World executable
-set(EXEC_NAME helloworld)
-add_executable(${EXEC_NAME} helloworld.cpp)
+set(EXEC_NAME calculator)
+add_executable(${EXEC_NAME} calculator.cpp)
 
 # These compile options make the compiler add extra warnings and treat warnings as errors
 target_compile_options(${EXEC_NAME} PRIVATE "-Wall")
 target_compile_options(${EXEC_NAME} PRIVATE "-Wextra")
 target_compile_options(${EXEC_NAME} PRIVATE "-Werror")
 target_compile_options(${EXEC_NAME} PRIVATE "-pedantic")
-
-## End Executable
-
-## Hello Bob executable
-set(EXEC_NAME2 hellobob)
-add_executable(${EXEC_NAME2} hellobob.cpp)
-
-# These compile options make the compiler add extra warnings and treat warnings as errors
-target_compile_options(${EXEC_NAME2} PRIVATE "-Wall")
-target_compile_options(${EXEC_NAME2} PRIVATE "-Wextra")
-target_compile_options(${EXEC_NAME2} PRIVATE "-Werror")
-target_compile_options(${EXEC_NAME2} PRIVATE "-pedantic")
-
-## End Executable
-
-##
-## Add an Executable
-## This is an example of a complex executable that links to libraries and
-## has a lot of compile options
-##
-
-## Fibonacci CLI executable
-set(EXEC_NAME fibocli)
-add_executable(${EXEC_NAME} fibocli.cpp)
-
-# Link the executable with the library, so all of the sources from $SOURCES
-# are linked to the executable file with main in it()
-target_link_libraries(${EXEC_NAME} PRIVATE fibonacci)
-
-# Add the include directory, so that the sources from $SOURCES can include without specifying the path
-# No need to add include dirs: inherited transitively from 'treasure' target
-
-# These compile options make the compiler add extra warnings and treat warnings as errors
-target_compile_options(${EXEC_NAME} PRIVATE "-Wall")
-target_compile_options(${EXEC_NAME} PRIVATE "-Wextra")
-target_compile_options(${EXEC_NAME} PRIVATE "-Werror")
-target_compile_options(${EXEC_NAME} PRIVATE "-pedantic")
-
-# These options turn off specific warnings, because the instructor's have requirements that
-# require using variable length arrays (vla) and unused parameters. YOu should generally not
-# have these in a project, unless they are absolutely necessary
-target_compile_options(${EXEC_NAME} PRIVATE "-Wno-vla") # Disable variable length array warning, int foobar[SIZE]
-target_compile_options(${EXEC_NAME} PRIVATE "-Wno-unused-parameter") # The instructors required a func def with unused params.
-
-
-## End executable
-
-
-
-##
-## CMake Targets
-##
-
-# Add the target 'make run_${EXEC_NAME}' to build and run the tests
-add_custom_target(run_${EXEC_NAME}
-        COMMAND $<TARGET_FILE:${EXEC_NAME}> 10
-        DEPENDS ${EXEC_NAME}
-        COMMENT "Running ${EXEC_NAME} with N=10"
-)
-
-# Set  compiler options
-
-
