@@ -76,11 +76,38 @@
             "dependsOn": "CMake: configure"
         },
         {
+            "label": "CMake: build tests",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Debug",
+                "--target",
+                "tests",
+                "--parallel"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "dependsOn": "CMake: configure"
+        },
+        {
             "label": "CMake: configure & build",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "CMake: configure",
                 "CMake: build calculator"
+            ]
+        },
+        {
+            "label": "CMake: configure & build tests",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "CMake: configure",
+                "CMake: build tests"
             ]
         }
     ]
